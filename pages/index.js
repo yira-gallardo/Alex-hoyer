@@ -708,7 +708,7 @@ export default function Home() {
               </div>
               <div className={styles.mail}>
                 <a href="mailto:alexhover@themusicbusinesscompanv.com">
-                  alexhover@themusicbusinesscompanv.com
+                  alexhoyer@themusicbusinesscompanv.com
                 </a>
               </div>
             </motion.div>
