@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Show } from "@/components/Show/show";
-import SHOWS from "@/constants/shows.json";
+import LISTA_DE_SHOWS from "@/constants/shows.json";
 
 export default function Home() {
   const [menuActive, setMenuActive] = useState(false); // Para activar menu mobile
@@ -474,7 +474,8 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
               >
                 <div className={styles.showBox}>
-                  {SHOWS.map((show) => (
+                  {/* ALGORITMO DE SHOWS */}
+                  {LISTA_DE_SHOWS.map((show) => (
                     <Show
                       key={show.id}
                       date={show.date}
@@ -559,7 +560,7 @@ export default function Home() {
               </div>
               <div className={styles.mail}>
                 <a href="mailto:alexhover@themusicbusinesscompanv.com">
-                  alexhoyer@themusicbusinesscompanv.com
+                  alexhoyer@themusicbusinesscompany.com
                 </a>
               </div>
             </motion.div>
