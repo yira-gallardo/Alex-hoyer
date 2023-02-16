@@ -4,6 +4,8 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Show } from "@/components/Show/show";
+import SHOWS from "@/constants/shows.json";
 
 export default function Home() {
   const [menuActive, setMenuActive] = useState(false); // Para activar menu mobile
@@ -472,166 +474,15 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
               >
                 <div className={styles.showBox}>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>29 Marzo</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Lunario</div>
-                        <div>CDMX</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>3 Abril</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Auditorio Nacional</div>
-                        <div>CDMX</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>10 Abril</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Metropolitan</div>
-                        <div>Guadalajara</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>14 Marzo</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Café Imperial</div>
-                        <div>Monterrey</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>29 Marzo</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Lunario</div>
-                        <div>CDMX</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>3 Abril</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Auditorio Nacional</div>
-                        <div>CDMX</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>10 Abril</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Metropolitan</div>
-                        <div>Guadalajara</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.showItem}>
-                    <div className={styles.left}>14 Marzo</div>
-                    <div className={styles.center}>
-                      <div className={styles.venue}>
-                        <div>Café Imperial</div>
-                        <div>Monterrey</div>
-                      </div>
-                    </div>
-                    <div className={styles.right}>
-                      <div className={styles.buttonPrimary}>
-                        <a
-                          href="https://open.spotify.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Boletos
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  {SHOWS.map((show) => (
+                    <Show
+                      key={show.id}
+                      date={show.date}
+                      venue={show.venue}
+                      city={show.city}
+                      tickets={show.tickets}
+                    />
+                  ))}
                 </div>
               </motion.div>
             </div>
