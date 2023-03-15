@@ -81,12 +81,14 @@ export default function Home() {
                 >
                   Tour
                 </div>
-                <div
+                <a
+                  href="https://alexhoyer.lnk.to/Cruda"
+                  target="_blank"
+                  rel="noreferrer"
                   className={styles.link}
-                  onClick={() => goToSection("music")}
                 >
                   Música
-                </div>
+                </a>
                 <div
                   className={styles.link}
                   onClick={() => goToSection("tienda")}
