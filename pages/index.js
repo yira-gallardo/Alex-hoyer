@@ -46,7 +46,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content="https://alex-hoyer.vercel.app/img/meta.jpg"
+          content="https://www.alexhoyer.mx/img/meta.jpg"
         />
       </Head>
       <main className={styles.main}>
@@ -79,13 +79,19 @@ export default function Home() {
                   className={styles.link}
                   onClick={() => goToSection("shows")}
                 >
-                  Shows
+                  Tour
                 </div>
                 <div
                   className={styles.link}
                   onClick={() => goToSection("music")}
                 >
                   Música
+                </div>
+                <div
+                  className={styles.link}
+                  onClick={() => goToSection("tienda")}
+                >
+                  Tienda
                 </div>
                 <div
                   className={styles.link}
@@ -533,6 +539,14 @@ export default function Home() {
                 ></iframe>
               </div>
             </motion.div>
+          </div>
+        </section>
+        <section className={styles.tienda} id="tienda">
+          <div className="container">
+            <div className={styles.title}>
+              <h3>Tienda</h3>
+            </div>
+            <div className={styles.tienda}>Próximamente</div>
           </div>
         </section>
         <section className={styles.contact} id="contact">
