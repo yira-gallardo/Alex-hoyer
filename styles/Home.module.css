@@ -65,11 +65,9 @@
   color: #20c47d;
   text-transform: uppercase;
 }
-
 .icon svg {
   fill: #20c47d;
 }
-
 .navMobile {
   display: none;
 }
@@ -101,7 +99,7 @@
   align-items: center;
 }
 .navDesktop .logo {
-  width: 200px;
+  width: 150px;
   position: relative;
 }
 .navDesktop .logoImg {
@@ -117,7 +115,7 @@
   color: white;
   text-decoration: none;
   padding: 0 20px;
-  font-size: 1.5em;
+  font-size: 1em;
   position: relative;
   cursor: pointer;
 }
@@ -267,7 +265,6 @@
 .showBox {
   margin: 40px 0;
 }
-
 .music {
   background-color: black;
   color: white;
@@ -276,7 +273,17 @@
 .music .spotify {
   margin: 40px 0;
 }
-
+.tienda .title h3 {
+  font-size: 2em;
+  text-align: left;
+}
+.tienda {
+  background-color: black;
+  color: white;
+  padding: 5em 0;
+  font-size: 1.5em;
+  text-align: center;
+}
 .contact {
   background-color: #0e0e0e;
   color: white;
