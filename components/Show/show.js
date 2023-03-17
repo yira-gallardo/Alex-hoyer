@@ -17,6 +17,7 @@ export const Show = ({ date, venue, city, tickets }) => {
           </a>
         </div>
       </div>
+      <div className={styles.line} />
     </div>
   );
 };
