@@ -73,13 +73,13 @@ export default function Home() {
               </div>
               <div className={styles.center}>
                 <div className={styles.link} onClick={() => goToSection("bio")}>
-                  Bio
+                  BIO
                 </div>
                 <div
                   className={styles.link}
                   onClick={() => goToSection("shows")}
                 >
-                  Tour
+                  TOUR
                 </div>
                 <a
                   href="https://alexhoyer.lnk.to/Cruda"
@@ -87,19 +87,19 @@ export default function Home() {
                   rel="noreferrer"
                   className={styles.link}
                 >
-                  Música
+                  MÚSICA
                 </a>
                 <div
                   className={styles.link}
                   onClick={() => goToSection("tienda")}
                 >
-                  Tienda
+                  TIENDA
                 </div>
                 <div
                   className={styles.link}
                   onClick={() => goToSection("contact")}
                 >
-                  Contacto
+                  CONTACTO
                 </div>
               </div>
               <div className={styles.right}>
@@ -319,19 +319,19 @@ export default function Home() {
                 </div>
               </Link>
               <div className={styles.link} onClick={() => goToSection("bio")}>
-                Bio
+                BIO
               </div>
               <div className={styles.link} onClick={() => goToSection("shows")}>
-                Shows
+                TOUR
               </div>
               <div className={styles.link} onClick={() => goToSection("music")}>
-                Música
+                MÚSICA
               </div>
               <div
                 className={styles.link}
                 onClick={() => goToSection("contact")}
               >
-                Contacto
+                CONTACTO
               </div>
             </div>
           </motion.div>
@@ -363,7 +363,7 @@ export default function Home() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Video
+                    VIDEO
                   </a>
                 </div>
                 <div
@@ -372,7 +372,7 @@ export default function Home() {
                   rel="noreferrer"
                 >
                   <a href="https://open.spotify.com/artist/45ztMs8dTg6GRQ41yY4xtr?si=unFs455sQAWjel07p-QBnA">
-                    Música
+                    MÚSICA
                   </a>
                 </div>
               </div>
@@ -390,7 +390,7 @@ export default function Home() {
                 >
                   <div className={styles.heading}>
                     <div className={styles.title}>
-                      <h3>Alex Hoyer</h3>
+                      <h3>ALEX HOYER</h3>
                     </div>
                     <div className={styles.subtitle}>
                       <h4>Productor, compositor y músico</h4>
@@ -471,7 +471,7 @@ export default function Home() {
                 </div>
                 <div className={styles.heading}>
                   <div className={styles.title}>
-                    <h3>Próximos shows</h3>
+                    <h3>PRÓXIMOS SHOWS</h3>
                   </div>
                 </div>
               </motion.div>
@@ -519,7 +519,7 @@ export default function Home() {
               </div>
               <div className={styles.heading}>
                 <div className={styles.title}>
-                  <h3>Música</h3>
+                  <h3>MÚSICA</h3>
                 </div>
               </div>
             </motion.div>
@@ -546,9 +546,9 @@ export default function Home() {
         <section className={styles.tienda} id="tienda">
           <div className="container">
             <div className={styles.title}>
-              <h3>Tienda</h3>
+              <h3>TIENDA</h3>
             </div>
-            <div className={styles.tienda}>Próximamente</div>
+            <div className={styles.tienda}>PRÓXIMAMENTE</div>
           </div>
         </section>
         <section className={styles.contact} id="contact">
@@ -571,7 +571,7 @@ export default function Home() {
               </div>
               <div className={styles.heading}>
                 <div className={styles.title}>
-                  <h3>Contacto</h3>
+                  <h3>CONTACTO</h3>
                 </div>
               </div>
               <div className={styles.mail}>
