@@ -9,18 +9,42 @@
   },
   {
     "id": 2,
-    "date": "5 Marzo",
-    "venue": "Hellow Vibe",
-    "city": "CDMX",
+    "date": "25 Marzo",
+    "venue": "Cumbre Tajín",
+    "city": "Veracruz",
     "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
     "isPast": true
   },
   {
     "id": 1,
-    "date": "6 Marzo",
-    "venue": "Hellow Vibe",
-    "city": "CDMX",
+    "date": "4 Octubre",
+    "venue": "Auditorio Benito Juárez",
+    "city": "Guadalajara",
     "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
-    "isPast": false
+    "isPast": true
+  },
+  {
+    "id": 1,
+    "date": "5 Octubre",
+    "venue": "Auditorio Josefa Ortiz de Domínguez",
+    "city": "Querétaro",
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": true
+  },
+  {
+    "id": 1,
+    "date": "7 Octubre",
+    "venue": "Estadio Andrés Quintana Roo",
+    "city": "Cancún",
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": true
+  },
+  {
+    "id": 1,
+    "date": "8 Octubre",
+    "venue": "Foto GNP",
+    "city": "Mérida",
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": true
   }
 ]

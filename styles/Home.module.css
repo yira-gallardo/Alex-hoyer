@@ -516,4 +516,7 @@
   .contact .mail a {
     font-size: 14px;
   }
+  .tienda .title h3 {
+    text-align: center;
+  }
 }
