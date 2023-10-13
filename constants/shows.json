@@ -4,6 +4,23 @@
     "date": "4 Marzo",
     "venue": "Hellow Vibe",
     "city": "CDMX",
-    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx"
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": true
+  },
+  {
+    "id": 2,
+    "date": "5 Marzo",
+    "venue": "Hellow Vibe",
+    "city": "CDMX",
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": true
+  },
+  {
+    "id": 1,
+    "date": "6 Marzo",
+    "venue": "Hellow Vibe",
+    "city": "CDMX",
+    "tickets": "https://www.ticketmaster.com.mx/?language=en-mx",
+    "isPast": false
   }
 ]
