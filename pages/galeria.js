@@ -4,12 +4,113 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Show } from "@/components/Show/show";
-import LISTA_DE_SHOWS from "@/constants/shows.json";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
-export default function Home() {
+const images = [
+  {
+    original: "/img/gal-1.jpg",
+    thumbnail: "/img/gal-1.jpg",
+  },
+  {
+    original: "/img/gal-2.jpg",
+    thumbnail: "/img/gal-2.jpg",
+  },
+  {
+    original: "/img/gal-3.jpg",
+    thumbnail: "/img/gal-3.jpg",
+  },
+  {
+    original: "/img/gal-4.jpg",
+    thumbnail: "/img/gal-4.jpg",
+  },
+  {
+    original: "/img/gal-5.jpg",
+    thumbnail: "/img/gal-5.jpg",
+  },
+  {
+    original: "/img/gal-6.jpg",
+    thumbnail: "/img/gal-6.jpg",
+  },
+  {
+    original: "/img/gal-7.jpg",
+    thumbnail: "/img/gal-7.jpg",
+  },
+  {
+    original: "/img/gal-8.jpg",
+    thumbnail: "/img/gal-8.jpg",
+  },
+  {
+    original: "/img/gal-9.jpg",
+    thumbnail: "/img/gal-9.jpg",
+  },
+  {
+    original: "/img/gal-10.jpg",
+    thumbnail: "/img/gal-10.jpg",
+  },
+  {
+    original: "/img/gal-11.jpg",
+    thumbnail: "/img/gal-11.jpg",
+  },
+  {
+    original: "/img/gal-12.jpg",
+    thumbnail: "/img/gal-12.jpg",
+  },
+  {
+    original: "/img/gal-13.jpg",
+    thumbnail: "/img/gal-13.jpg",
+  },
+  {
+    original: "/img/gal-14.jpg",
+    thumbnail: "/img/gal-14.jpg",
+  },
+  {
+    original: "/img/gal-15.jpg",
+    thumbnail: "/img/gal-15.jpg",
+  },
+  {
+    original: "/img/gal-16.jpg",
+    thumbnail: "/img/gal-16.jpg",
+  },
+  {
+    original: "/img/gal-17.jpg",
+    thumbnail: "/img/gal-17.jpg",
+  },
+  {
+    original: "/img/gal-18.jpg",
+    thumbnail: "/img/gal-18.jpg",
+  },
+  {
+    original: "/img/gal-19.jpg",
+    thumbnail: "/img/gal-19.jpg",
+  },
+  {
+    original: "/img/gal-20.jpg",
+    thumbnail: "/img/gal-20.jpg",
+  },
+  {
+    original: "/img/gal-21.jpg",
+    thumbnail: "/img/gal-21.jpg",
+  },
+  {
+    original: "/img/gal-22.jpg",
+    thumbnail: "/img/gal-22.jpg",
+  },
+  {
+    original: "/img/gal-23.jpg",
+    thumbnail: "/img/gal-23.jpg",
+  },
+  {
+    original: "/img/gal-24.jpg",
+    thumbnail: "/img/gal-24.jpg",
+  },
+  {
+    original: "/img/gal-25.jpg",
+    thumbnail: "/img/gal-25.jpg",
+  },
+];
+
+export default function Gallery() {
   const [menuActive, setMenuActive] = useState(false); // Para activar menu mobile
   const [scrolled, setScrolled] = useState(false); // Para detectar scrolleo
 
@@ -74,29 +175,24 @@ export default function Home() {
                 </Link>
               </div>
               <div className={styles.center}>
-                <div
-                  className={styles.link}
-                  onClick={() => goToSection("shows")}
-                >
+                <Link href="/" className={styles.link}>
                   TOUR
-                </div>
-                <a
+                </Link>
+                <Link
                   href="https://alexhoyer.lnk.to/Cruda"
                   target="_blank"
                   rel="noreferrer"
                   className={styles.link}
                 >
                   MÚSICA
-                </a>
-                <Link href="/galeria" className={styles.link}>
-                  GALERÍA
                 </Link>
-                <div
+                <Link
+                  href="/"
                   className={styles.link}
                   onClick={() => goToSection("contact")}
                 >
                   CONTACTO
-                </div>
+                </Link>
               </div>
               <div className={styles.right}>
                 <div className={styles.socials}>
@@ -333,291 +429,8 @@ export default function Home() {
           </motion.div>
         )}
         {/* ENDS MENU MOBILE */}
-        <section className={styles.header}>
-          <section className={styles.carouselContainer}>
-            <Carousel
-              autoPlay
-              autoPlaySpeed={3000}
-              arrows={false}
-              infinite
-              pauseOnHover={false}
-              responsive={{
-                desktop: {
-                  breakpoint: {
-                    max: 3000,
-                    min: 1024,
-                  },
-                  items: 1,
-                },
-              }}
-            >
-              <div className={styles.carousel}>
-                <div
-                  className={styles.carouselItem}
-                  style={{ backgroundImage: "url(/img/carousel-1.jpg)" }}
-                />
-              </div>
-              <div className={styles.carousel}>
-                <div
-                  className={styles.carouselItem}
-                  style={{
-                    backgroundImage: "url(/img/carousel-2.jpg)",
-                    backgroundPosition: "top center",
-                  }}
-                />
-              </div>
-              <div className={styles.carousel}>
-                <div
-                  className={styles.carouselItem}
-                  style={{
-                    backgroundImage: "url(/img/carousel-3.jpg)",
-                    backgroundPosition: "top center",
-                  }}
-                />
-              </div>
-            </Carousel>
-          </section>
-          <div className={styles.contentContainer}>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2, delay: 1 }}
-            >
-              <div className={styles.content}>
-                <div className={styles.name}>
-                  <Image
-                    src="/img/alex-hoyer.png"
-                    alt="Alex Hoyer"
-                    className={styles.nameImg}
-                    width={1612}
-                    height={213}
-                    priority
-                  />
-                </div>
-                <h2>&quot;Cruda&quot;</h2>
-                <h3>Ya disponible en todas las plataformas</h3>
-                <div className={styles.buttons}>
-                  <div className={styles.buttonThird}>
-                    <a
-                      href="https://www.youtube.com/watch?v=aLac169OVYY"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      VIDEO
-                    </a>
-                  </div>
-                  <div
-                    className={styles.buttonThird}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <a href="https://open.spotify.com/artist/45ztMs8dTg6GRQ41yY4xtr?si=unFs455sQAWjel07p-QBnA">
-                      MÚSICA
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        <section className={styles.shows} id="shows">
-          <div className={styles.bg} />
-          <div className={styles.overlay} />
-          <div className={styles.content}>
-            <div className="container">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-              >
-                <div className={styles.icon}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4em"
-                    height="4em"
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z"
-                    />
-                  </svg>
-                </div>
-                <div className={styles.heading}>
-                  <div className={styles.title}>
-                    <h3>PRÓXIMOS SHOWS</h3>
-                  </div>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-              >
-                <div className={styles.showBox}>
-                  {/* ALGORITMO DE SHOWS */}
-                  {LISTA_DE_SHOWS.map((show) => (
-                    <Show
-                      key={show.id}
-                      date={show.date}
-                      venue={show.venue}
-                      city={show.city}
-                      tickets={show.tickets}
-                      isPast={show.isPast}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-        <section className={styles.music} id="music">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className={styles.icon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="4em"
-                  height="4em"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
-                  <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z" />
-                  <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z" />
-                </svg>
-              </div>
-              <div className={styles.heading}>
-                <div className={styles.title}>
-                  <h3>MÚSICA</h3>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
-            >
-              <div className={styles.spotify}>
-                <iframe
-                  style={{ borderRadius: "12px" }}
-                  src="https://open.spotify.com/embed/artist/45ztMs8dTg6GRQ41yY4xtr?utm_source=generator&theme=0"
-                  width="100%"
-                  height="500"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        <section className={styles.music} id="music">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className={styles.icon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="4em"
-                  height="4em"
-                  fill="currentColor"
-                  class="bi bi-youtube"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                </svg>
-              </div>
-              <div className={styles.heading}>
-                <div className={styles.title}>
-                  <h3>VIDEO</h3>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
-            >
-              <div className={styles.spotify}>
-                <iframe
-                  width="100%"
-                  height="500px"
-                  src="https://www.youtube.com/embed/akOcZ3e454k?si=cpCAEZnIKanAFlqD"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        <section className={styles.tienda} id="tienda">
-          <div className="container">
-            <div className={styles.title}>
-              <h3>TIENDA</h3>
-            </div>
-            <div className={styles.tienda}>PRÓXIMAMENTE</div>
-          </div>
-        </section>
-        <section className={styles.contact} id="contact">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <div className={styles.subscribe}>
-                <h3>
-                  ¡Suscríbete y sé el primero en recibir noticias exclusivas!
-                </h3>
-                <div className={styles.subscribeForm}>
-                  <div className={styles.subscribeInput}>
-                    <input
-                      type="text"
-                      placeholder="Ingresa tu correo electrónico"
-                    />
-                  </div>
-                  <div className={styles.subscribeButton}>
-                    <button>SUSCRIBIRME</button>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.icon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="4em"
-                  height="4em"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
-                </svg>
-              </div>
-              <div className={styles.heading}>
-                <div className={styles.title}>
-                  <h3>CONTACTO</h3>
-                </div>
-              </div>
-              <div className={styles.mail}>
-                <a href="mailto:alexhover@themusicbusinesscompanv.com">
-                  alexhoyer@themusicbusinesscompany.com
-                </a>
-              </div>
-            </motion.div>
-          </div>
+        <section className={styles.gallery}>
+          <ImageGallery items={images} />
         </section>
       </main>
       <footer className={styles.footer}>

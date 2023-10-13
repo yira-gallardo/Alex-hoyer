@@ -99,7 +99,7 @@
   align-items: center;
 }
 .navDesktop .logo {
-  width: 150px;
+  width: 220px;
   position: relative;
 }
 .navDesktop .logoImg {
@@ -115,7 +115,7 @@
   color: white;
   text-decoration: none;
   padding: 0 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   position: relative;
   cursor: pointer;
 }
@@ -143,6 +143,7 @@
 }
 .navDesktop .social svg {
   fill: white;
+
   transition-duration: 0.2s;
 }
 .navDesktop .social a:hover svg {
@@ -165,6 +166,7 @@
   align-items: center;
   text-align: center;
   min-height: 100vh;
+  position: relative;
 }
 .header h2 {
   font-size: 4em;
@@ -183,7 +185,7 @@
 }
 .header .name {
   width: 700px;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 .header .nameImg {
   width: 100%;
@@ -307,6 +309,74 @@
   color: #646464;
   text-align: center;
   font-size: 0.8em;
+}
+
+.carouselContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.carouselItem {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition-duration: 0.5s;
+  background-position: center;
+  background-size: cover;
+}
+
+.contentContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.subscribe {
+  text-align: center;
+}
+.subscribeForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.subscribeInput input {
+  border: 3px solid #20c47d;
+  padding: 8px 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7rem;
+  color: white;
+  background-color: transparent;
+  width: 300px;
+}
+.subscribeButton button {
+  background-color: #20c47d;
+  border: 3px solid #20c47d;
+  padding: 8px 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7rem;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.2s;
 }
 
 @media only screen and (max-width: 1000px) {
