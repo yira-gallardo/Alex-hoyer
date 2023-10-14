@@ -314,15 +314,16 @@ export default function Home() {
                   />
                 </div>
               </Link>
-              <div className={styles.link} onClick={() => goToSection("bio")}>
-                BIO
-              </div>
+
               <div className={styles.link} onClick={() => goToSection("shows")}>
                 TOUR
               </div>
               <div className={styles.link} onClick={() => goToSection("music")}>
                 MÚSICA
               </div>
+              <Link href="/galeria" className={styles.link}>
+                GALERÍA
+              </Link>
               <div
                 className={styles.link}
                 onClick={() => goToSection("contact")}

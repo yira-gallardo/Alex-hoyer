@@ -410,9 +410,9 @@ export default function Gallery() {
                   />
                 </div>
               </Link>
-              <div className={styles.link} onClick={() => goToSection("bio")}>
-                BIO
-              </div>
+              <Link href="/galeria" className={styles.link}>
+                GALERÍA
+              </Link>
               <div className={styles.link} onClick={() => goToSection("shows")}>
                 TOUR
               </div>

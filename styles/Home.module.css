@@ -459,6 +459,8 @@
     font-family: "Manrope", sans-serif;
     padding: 4px 0;
     font-size: 1.5em;
+    color: white;
+    text-decoration: none;
   }
   .menuMobile .close {
     position: absolute;
