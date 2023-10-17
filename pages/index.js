@@ -2,16 +2,20 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Show } from "@/components/Show/show";
 import LISTA_DE_SHOWS from "@/constants/shows.json";
 import Carousel from "react-multi-carousel";
+import emailjs from "emailjs-com";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Home() {
+  const form = useRef();
   const [menuActive, setMenuActive] = useState(false); // Para activar menu mobile
   const [scrolled, setScrolled] = useState(false); // Para detectar scrolleo
+  const [isMailSent, setIsMailSent] = useState(false);
+  const [sendingMail, setSendingMail] = useState(false);
 
   // Detectando scrolleo
   useEffect(() => {
@@ -36,6 +40,26 @@ export default function Home() {
     setMenuActive(false);
   };
 
+  const sendEmail = (e) => {
+    setSendingMail(true);
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_gm73gog",
+        "template_ett0ynf",
+        form.current,
+        "ItpuwAnIzjjXzeuRm"
+      )
+      .then(
+        (result) => {
+          alert("Te suscribiste con éxito");
+          setIsMailSent(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <>
       <Head>
@@ -533,7 +557,7 @@ export default function Home() {
                   width="4em"
                   height="4em"
                   fill="currentColor"
-                  class="bi bi-youtube"
+                  className="bi bi-youtube"
                   viewBox="0 0 16 16"
                 >
                   <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
@@ -557,9 +581,9 @@ export default function Home() {
                   height="500px"
                   src="https://www.youtube.com/embed/akOcZ3e454k?si=cpCAEZnIKanAFlqD"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </motion.div>
@@ -584,17 +608,23 @@ export default function Home() {
                 <h3>
                   ¡Suscríbete y sé el primero en recibir noticias exclusivas!
                 </h3>
-                <div className={styles.subscribeForm}>
-                  <div className={styles.subscribeInput}>
-                    <input
-                      type="text"
-                      placeholder="Ingresa tu correo electrónico"
-                    />
+                <form ref={form}>
+                  <div className={styles.subscribeForm}>
+                    <div className={styles.subscribeInput}>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="tuemail@gmail.com"
+                        required
+                      />
+                    </div>
+                    <div className={styles.subscribeButton}>
+                      <button onClick={sendEmail} disabled={sendingMail}>
+                        SUSCRIBIRME
+                      </button>
+                    </div>
                   </div>
-                  <div className={styles.subscribeButton}>
-                    <button>SUSCRIBIRME</button>
-                  </div>
-                </div>
+                </form>
               </div>
               <div className={styles.icon}>
                 <svg
