@@ -26,13 +26,14 @@ export const Show = ({ date, venue, city, tickets, isPast }) => {
           <div>{city}</div>
         </div>
       </div>
-      <div className={styles.right}>
+      {/*  <div className={styles.right}>
         <div className={styles.buttonPrimary}>
           <a href={tickets} target="_blank" rel="noreferrer">
             Boletos
           </a>
         </div>
-      </div>
+      </div> */}
+
       {/* <div className={styles.line} /> */}
     </div>
   );

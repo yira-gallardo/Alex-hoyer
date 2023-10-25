@@ -105,7 +105,7 @@ export default function Home() {
                   TOUR
                 </div>
                 <a
-                  href="https://alexhoyer.lnk.to/Cruda"
+                  href="https://alexhoyer.lnk.to/Planes"
                   target="_blank"
                   rel="noreferrer"
                   className={styles.link}
@@ -382,7 +382,7 @@ export default function Home() {
                   style={{ backgroundImage: "url(/img/carousel-1.jpg)" }}
                 />
               </div>
-              <div className={styles.carousel}>
+              {/*  <div className={styles.carousel}>
                 <div
                   className={styles.carouselItem}
                   style={{
@@ -390,7 +390,8 @@ export default function Home() {
                     backgroundPosition: "top center",
                   }}
                 />
-              </div>
+              </div> */}
+
               <div className={styles.carousel}>
                 <div
                   className={styles.carouselItem}
@@ -409,7 +410,7 @@ export default function Home() {
               transition={{ duration: 2, delay: 1 }}
             >
               <div className={styles.content}>
-                <div className={styles.name}>
+                {/*<div className={styles.name}>
                   <Image
                     src="/img/alex-hoyer.png"
                     alt="Alex Hoyer"
@@ -418,10 +419,10 @@ export default function Home() {
                     height={213}
                     priority
                   />
-                </div>
+                </div> 
                 <h2>&quot;Cruda&quot;</h2>
                 <h3>Ya disponible en todas las plataformas</h3>
-                <div className={styles.buttons}>
+                 <div className={styles.buttons}>
                   <div className={styles.buttonThird}>
                     <a
                       href="https://www.youtube.com/watch?v=aLac169OVYY"
@@ -441,6 +442,7 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
+                */}
               </div>
             </motion.div>
           </div>
@@ -471,7 +473,7 @@ export default function Home() {
                 </div>
                 <div className={styles.heading}>
                   <div className={styles.title}>
-                    <h3>PRÓXIMOS SHOWS</h3>
+                    <h3> SHOWS</h3>
                   </div>
                 </div>
               </motion.div>

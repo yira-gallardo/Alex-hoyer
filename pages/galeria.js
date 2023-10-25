@@ -65,10 +65,6 @@ const images = [
     thumbnail: "/img/gal-14.jpg",
   },
   {
-    original: "/img/gal-15.jpg",
-    thumbnail: "/img/gal-15.jpg",
-  },
-  {
     original: "/img/gal-16.jpg",
     thumbnail: "/img/gal-16.jpg",
   },
